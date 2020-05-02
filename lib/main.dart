@@ -1,21 +1,16 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
-import 'package:calendar_strip/calendar_strip.dart';
+import 'calenderHome.dart';
 
 void main() => runApp(FiveGoods());
 
-class FiveGoods extends StatelessWidget {
-  DateTime startDate = DateTime.now().subtract(Duration(days: 2));
-  DateTime endDate = DateTime.now().add(Duration(days: 2));
-  DateTime selectedDate = DateTime.now().subtract(Duration(days: 2));
-  List<DateTime> markedDates = [
-    DateTime.now().subtract(Duration(days: 1)),
-    DateTime.now().subtract(Duration(days: 2)),
-    DateTime.now().add(Duration(days: 4))
-  ];
-  onSelect(data) {
-    print("Selected Date -> $data");
-  }
+class FiveGoods extends StatefulWidget {
+  @override
+  _FiveGoodsState createState() => _FiveGoodsState();
+}
+
+class _FiveGoodsState extends State<FiveGoods> {
+  CalenderHome calenderHome = CalenderHome();
 
   @override
   Widget build(BuildContext context) {
@@ -23,14 +18,7 @@ class FiveGoods extends StatelessWidget {
       title: 'Flutter Demo',
       theme: ThemeData(primarySwatch: Colors.blue),
       home: Scaffold(
-        body: Container(
-          child: CalendarStrip(
-            startDate: startDate,
-            endDate: endDate,
-            onDateSelected: onSelect,
-            markedDates: markedDates,
-          ),
-        ),
+        body: calenderHome,
       ),
     );
   }
