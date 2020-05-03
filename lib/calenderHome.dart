@@ -72,20 +72,18 @@ class _CalenderHomeState extends State<CalenderHome> {
 
   @override
   Widget build(BuildContext context) {
-    return Container(
-      child: CalendarStrip(
-        startDate: startDate,
-        endDate: endDate,
-        onDateSelected: onSelect,
-        markedDates: markedDates,
-        containerHeight: 90,
-        containerDecoration: BoxDecoration(
-          color: Color(0xFFACD0C0),
-        ),
-        iconColor: Colors.white,
-        monthNameWidget: _monthNameWidget,
-        dateTileBuilder: dateTileBuilder,
+    return CalendarStrip(
+      startDate: startDate,
+      endDate: endDate,
+      onDateSelected: onSelect,
+      markedDates: markedDates,
+      containerHeight: 90,
+      containerDecoration: BoxDecoration(
+        color: Color(0xFFACD0C0),
       ),
+      iconColor: Colors.white,
+      monthNameWidget: _monthNameWidget,
+      dateTileBuilder: dateTileBuilder,
     );
   }
 }
