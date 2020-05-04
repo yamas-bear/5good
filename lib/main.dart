@@ -1,11 +1,7 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'calenderHome.dart';
-
-const numberOfItems = 5001;
-const minItemHeight = 20.0;
-const maxItemHeight = 150.0;
-const scrollDuration = Duration(seconds: 2);
+import 'DownBar.dart';
 
 void main() => runApp(FiveGoods());
 
@@ -21,23 +17,30 @@ class _FiveGoodsState extends State<FiveGoods> {
   Widget build(BuildContext context) {
     return MaterialApp(
       title: 'Flutter Demo',
-      theme: ThemeData(primarySwatch: Colors.blue),
+      theme: ThemeData(primarySwatch: Colors.orange),
       home: Scaffold(
+        appBar: AppBar(
+          iconTheme: IconThemeData(),
+          title: Text('SAMPLE APP'),
+        ),
         body: SafeArea(
           child: Column(
+            crossAxisAlignment: CrossAxisAlignment.center,
             children: <Widget>[
               calenderHome,
-              Container(
-                height: 500,
-                child: ListView.builder(
-                  itemBuilder: (BuildContext context, int index) =>
-                      EntryItem(data[index]),
-                  itemCount: data.length,
+              Expanded(
+                child: Container(
+                  child: ListView.builder(
+                    itemBuilder: (BuildContext context, int index) =>
+                        EntryItem(data[index]),
+                    itemCount: data.length,
+                  ),
                 ),
               ),
             ],
           ),
         ),
+        bottomNavigationBar: DownBar(),
       ),
     );
   }
@@ -57,12 +60,59 @@ final List<Entry> data = <Entry>[
       Entry(
         'Section A0',
       ),
+      Entry(
+        'section01',
+      ),
+      Entry(
+        'section01',
+      ),
+      Entry(
+        'section01',
+      ),
+      Entry(
+        'section01',
+      ),
+      Entry(
+        'section01',
+      ),
+      Entry(
+        'section01',
+      ),
+      Entry(
+        'section01',
+      ),
+      Entry(
+        'section01',
+      ),
+      Entry(
+        'section1212',
+      ),
       Entry('Section A1'),
       Entry('Section A2'),
     ],
   ),
   Entry(
     '今日の「ありがとう」',
+    <Entry>[
+      Entry(
+        'section01',
+      ),
+      Entry(
+        'section01',
+      ),
+      Entry(
+        'section01',
+      ),
+      Entry(
+        'section01',
+      ),
+      Entry(
+        'section01',
+      ),
+      Entry(
+        'section01',
+      ),
+    ],
   ),
   Entry(
     '明日やりたいこと',

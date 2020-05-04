@@ -44,9 +44,9 @@ class _CalenderHomeState extends State<CalenderHome> {
     Color fontColor = isDateOutOfRange ? Colors.grey : Colors.black87;
     //選択しているかどうかで、日付の色を指定する。
     TextStyle normalStyle =
-        TextStyle(fontSize: 17, fontWeight: FontWeight.w800, color: fontColor);
+        TextStyle(fontSize: 25, fontWeight: FontWeight.w800, color: fontColor);
     TextStyle selectedStyle = TextStyle(
-        fontSize: 17, fontWeight: FontWeight.w800, color: Colors.orangeAccent);
+        fontSize: 25, fontWeight: FontWeight.w800, color: Colors.orangeAccent);
     //選択しているかどうかで、曜日の色を指定する。
     TextStyle dayNameStyle = TextStyle(fontSize: 14.5, color: fontColor);
     //曜日と日付をリストにしている
@@ -77,7 +77,7 @@ class _CalenderHomeState extends State<CalenderHome> {
       endDate: endDate,
       onDateSelected: onSelect,
       markedDates: markedDates,
-      containerHeight: 90,
+      containerHeight: 120,
       containerDecoration: BoxDecoration(
         color: Color(0xFFACD0C0),
       ),
