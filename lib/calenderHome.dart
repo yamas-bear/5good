@@ -7,17 +7,16 @@ class CalenderHome extends StatefulWidget {
 }
 
 class _CalenderHomeState extends State<CalenderHome> {
-  DateTime startDate = DateTime.now().subtract(Duration(days: 2));
+  //現在の日にちから2日前.色が濃くなる日付の選択
+//  DateTime startDate = DateTime.now().subtract(Duration(days: 2));
 
-  DateTime endDate = DateTime.now().add(Duration(days: 2));
+  DateTime startDate = DateTime.now().subtract(Duration(days: 1));
 
-  DateTime selectedDate = DateTime.now().subtract(Duration(days: 2));
+  DateTime endDate = DateTime.now().add(Duration(days: 1));
 
-  List<DateTime> markedDates = [
-    DateTime.now().subtract(Duration(days: 1)),
-    DateTime.now().subtract(Duration(days: 2)),
-    DateTime.now().add(Duration(days: 4))
-  ];
+  DateTime selectedDate = DateTime.now().add(Duration(days: 100));
+
+  List<DateTime> markedDates = [];
 
   onSelect(data) {
     print("Selected Date -> $data");
@@ -28,12 +27,12 @@ class _CalenderHomeState extends State<CalenderHome> {
     return Container(
       child: Text(monthName,
           style: TextStyle(
-              fontSize: 17,
+              fontSize: 23,
               fontWeight: FontWeight.bold,
 //              color: Color(0xFF9dd3a9),
               color: Colors.white,
               fontStyle: FontStyle.normal)),
-      padding: EdgeInsets.only(top: 10, bottom: 4),
+      padding: EdgeInsets.only(top: 14, bottom: 7),
     );
   }
 
@@ -61,7 +60,7 @@ class _CalenderHomeState extends State<CalenderHome> {
       alignment: Alignment.center,
       padding: EdgeInsets.only(top: 8, left: 5, right: 5, bottom: 5),
       decoration: BoxDecoration(
-        color: !isSelectedDate ? Colors.transparent : Colors.white70,
+        color: !isSelectedDate ? Colors.transparent : Colors.white60,
         borderRadius: BorderRadius.all(Radius.circular(60)),
       ),
       child: Column(

@@ -19,21 +19,23 @@ class _FiveGoodsState extends State<FiveGoods> {
     return MaterialApp(
       title: 'Flutter Demo',
       theme: ThemeData(primarySwatch: Colors.orange),
-      home: Scaffold(
-        appBar: AppBar(
-          iconTheme: IconThemeData(),
-          title: Text('SAMPLE APP'),
-        ),
-        body: SafeArea(
-          child: Column(
-            crossAxisAlignment: CrossAxisAlignment.center,
-            children: <Widget>[
-              calenderHome,
-              WantList(),
-            ],
+      home: SafeArea(
+        child: Scaffold(
+          appBar: AppBar(
+            iconTheme: IconThemeData(),
+            title: Text('SAMPLE APP'),
           ),
+          body: SafeArea(
+            child: Column(
+              crossAxisAlignment: CrossAxisAlignment.center,
+              children: <Widget>[
+                calenderHome,
+                WantList(),
+              ],
+            ),
+          ),
+          bottomNavigationBar: DownBar(),
         ),
-        bottomNavigationBar: DownBar(),
       ),
     );
   }
