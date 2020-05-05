@@ -21,15 +21,15 @@ class _FiveGoodsState extends State<FiveGoods> {
       title: 'Flutter Demo',
       home: SafeArea(
         child: Scaffold(
-          appBar: PreferredSize(
-            preferredSize: Size.fromHeight(40),
-            child: AppBar(
-              backgroundColor: Colors.orangeAccent[200].withOpacity(0.9),
-              centerTitle: true,
-              iconTheme: IconThemeData(),
+//          appBar: PreferredSize(
+//            preferredSize: Size.fromHeight(40),
+//            child: AppBar(
+//              backgroundColor: Colors.orangeAccent[200].withOpacity(0.9),
+//              centerTitle: true,
+//              iconTheme: IconThemeData(),
 //              title: Text('SAMPLE APP'),
-            ),
-          ),
+//            ),
+//          ),
           body: SafeArea(
             child: Column(
               crossAxisAlignment: CrossAxisAlignment.center,
