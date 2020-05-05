@@ -1,4 +1,5 @@
 import 'package:flutter/cupertino.dart';
+import 'package:flutter/foundation.dart';
 import 'package:flutter/material.dart';
 import 'calenderHome.dart';
 import 'DownBar.dart';
@@ -18,12 +19,16 @@ class _FiveGoodsState extends State<FiveGoods> {
   Widget build(BuildContext context) {
     return MaterialApp(
       title: 'Flutter Demo',
-      theme: ThemeData(primarySwatch: Colors.orange),
       home: SafeArea(
         child: Scaffold(
-          appBar: AppBar(
-            iconTheme: IconThemeData(),
-            title: Text('SAMPLE APP'),
+          appBar: PreferredSize(
+            preferredSize: Size.fromHeight(40),
+            child: AppBar(
+              backgroundColor: Colors.orangeAccent[200].withOpacity(0.9),
+              centerTitle: true,
+              iconTheme: IconThemeData(),
+//              title: Text('SAMPLE APP'),
+            ),
           ),
           body: SafeArea(
             child: Column(

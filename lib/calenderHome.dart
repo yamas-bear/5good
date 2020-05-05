@@ -27,7 +27,7 @@ class _CalenderHomeState extends State<CalenderHome> {
     return Container(
       child: Text(monthName,
           style: TextStyle(
-              fontSize: 23,
+              fontSize: 26,
               fontWeight: FontWeight.bold,
 //              color: Color(0xFF9dd3a9),
               color: Colors.white,
