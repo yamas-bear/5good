@@ -18,6 +18,7 @@ class _CalenderHomeState extends State<CalenderHome> {
 
   List<DateTime> markedDates = [];
 
+  //onselectの中で日にちの情報とやりたいことリストを紐づける
   onSelect(data) {
     print("Selected Date -> $data");
   }
