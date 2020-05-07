@@ -1,26 +1,23 @@
 import 'package:flutter/cupertino.dart';
-import 'package:flutter/foundation.dart';
 import 'package:flutter/material.dart';
 import 'calenderHome.dart';
 import 'DownBar.dart';
+import 'dataListScreen.dart';
+import 'package:provider/provider.dart';
+import 'dataList.dart';
 import 'dataList.dart';
 
 void main() => runApp(FiveGoods());
 
-class FiveGoods extends StatefulWidget {
-  @override
-  _FiveGoodsState createState() => _FiveGoodsState();
-}
-
-class _FiveGoodsState extends State<FiveGoods> {
-  CalenderHome calenderHome = CalenderHome();
-
+class FiveGoods extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
-    return MaterialApp(
-      title: 'Flutter Demo',
-      home: SafeArea(
-        child: Scaffold(
+    return ChangeNotifierProvider(
+      create: (context) => ListData(),
+      child: MaterialApp(
+        title: 'Flutter Demo',
+        home: SafeArea(
+          child: Scaffold(
 //          appBar: PreferredSize(
 //            preferredSize: Size.fromHeight(40),
 //            child: AppBar(
@@ -30,16 +27,17 @@ class _FiveGoodsState extends State<FiveGoods> {
 //              title: Text('SAMPLE APP'),
 //            ),
 //          ),
-          body: SafeArea(
-            child: Column(
-              crossAxisAlignment: CrossAxisAlignment.center,
-              children: <Widget>[
-                calenderHome,
-                WantList(),
-              ],
+            body: SafeArea(
+              child: Column(
+                crossAxisAlignment: CrossAxisAlignment.center,
+                children: <Widget>[
+                  CalenderHome(),
+                  WantList(),
+                ],
+              ),
             ),
+            bottomNavigationBar: DownBar(),
           ),
-          bottomNavigationBar: DownBar(),
         ),
       ),
     );
