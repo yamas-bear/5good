@@ -5,7 +5,6 @@ import 'DownBar.dart';
 import 'dataListScreen.dart';
 import 'package:provider/provider.dart';
 import 'dataList.dart';
-import 'dataList.dart';
 
 void main() => runApp(FiveGoods());
 
@@ -32,7 +31,7 @@ class FiveGoods extends StatelessWidget {
                 crossAxisAlignment: CrossAxisAlignment.center,
                 children: <Widget>[
                   CalenderHome(),
-                  WantList(),
+                  Expanded(child: WantList()),
                 ],
               ),
             ),

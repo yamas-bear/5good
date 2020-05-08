@@ -2,31 +2,25 @@ import 'package:flutter/material.dart';
 import 'dataList.dart';
 import 'package:provider/provider.dart';
 
-class WantList extends StatelessWidget {
-  ListData data = ListData();
-
+class WantList extends StatefulWidget {
   @override
-  Widget build(BuildContext context) {
-    return Column(
-      children: <Widget>[
-        Text(data.datas[0].toString()),
-        Text(data.datas[1].toString()),
-        Text(data.datas[2].toString()),
-      ],
-    );
-  }
+  _WantListState createState() => _WantListState();
 }
 
-class TaskTile extends StatelessWidget {
-  final String taskTitle;
-  TaskTile({this.taskTitle});
-
+class _WantListState extends State<WantList> {
+  ListData data = ListData();
+  final List<int> colorCodes = <int>[600, 500, 100, 50];
   @override
   Widget build(BuildContext context) {
-    return ListTile(
-      title: Text(
-        taskTitle,
-      ),
-    );
+    return ListView.builder(
+        padding: const EdgeInsets.all(8),
+        itemCount: data.listCount,
+        itemBuilder: (BuildContext context, int index) {
+          return Container(
+            height: 50, //リストの要素の高さ
+            color: Colors.amber[colorCodes[index]],
+            child: Center(child: Text(data.wantList[index])),
+          );
+        });
   }
 }
