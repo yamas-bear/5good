@@ -14,7 +14,8 @@ class _CalenderHomeState extends State<CalenderHome> {
 
   DateTime endDate = DateTime.now().add(Duration(days: 1));
 
-  DateTime selectedDate = DateTime.now().add(Duration(days: 100));
+//  DateTime selectedDate = DateTime.now().add(Duration(days: 100));
+  DateTime selectedDate = DateTime.now();
 
   List<DateTime> markedDates = [];
 
@@ -50,10 +51,19 @@ class _CalenderHomeState extends State<CalenderHome> {
     //選択しているかどうかで、曜日の色を指定する。
     TextStyle dayNameStyle = TextStyle(fontSize: 14.5, color: fontColor);
     //曜日と日付をリストにしている
+//    if (date.day.toString() == DateTime.now().day.toString()) {
+//      List<Widget> _children = [
+//        Text(dayName, style: dayNameStyle),
+//        Text(date.day.toString(), style: selectedStyle),
+//      ];
+//      return _children;
+//    }
     List<Widget> _children = [
       Text(dayName, style: dayNameStyle),
-      Text(date.day.toString(),
-          style: !isSelectedDate ? normalStyle : selectedStyle),
+      Text(
+        date.day.toString(),
+        style: !isSelectedDate ? normalStyle : selectedStyle,
+      ),
     ];
 
     return AnimatedContainer(
