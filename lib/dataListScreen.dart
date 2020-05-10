@@ -17,9 +17,11 @@ class _WantListState extends State<WantList> {
           itemCount: Provider.of<ListData>(context).listCount,
           itemBuilder: (context, index) {
             final task = listdata.wantList[index];
-            return Container(
-              height: 50, //リストの要素の高さ
-              child: Center(child: Text(task)),
+            return ListTile(
+              title: Center(child: Text(task)),
+              onLongPress: () {
+                listdata.deleteList(task);
+              },
             );
           },
         );

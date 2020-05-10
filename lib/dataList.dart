@@ -1,3 +1,4 @@
+import 'package:fivegoodapp/dataListScreen.dart';
 import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
 
@@ -16,5 +17,10 @@ class ListData extends ChangeNotifier {
   void addTask(String newTaskTitle) {
     wantList.add(newTaskTitle);
     notifyListeners(); //完了したら通知を送ってデータの更新を行う必要がある。
+  }
+
+  void deleteList(String task) {
+    wantList.remove(task);
+    notifyListeners();
   }
 }
