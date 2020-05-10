@@ -21,12 +21,15 @@ class AddWantListsScreen extends StatelessWidget {
           crossAxisAlignment: CrossAxisAlignment.stretch,
           children: <Widget>[
             Text(
-              'Add Task',
+              '今日もお疲れさま',
               textAlign: TextAlign.center,
               style: TextStyle(
                 fontSize: 30,
-                color: Colors.lightGreenAccent,
+                color: Colors.yellow[700],
               ),
+            ),
+            SizedBox(
+              height: 20,
             ),
             TextField(
               autofocus: true,
@@ -37,7 +40,7 @@ class AddWantListsScreen extends StatelessWidget {
               },
             ),
             FlatButton(
-                child: Text('add'),
+                child: Icon(Icons.create),
                 color: Colors.lightGreenAccent,
                 onPressed: () {
                   Provider.of<ListData>(context, listen: false)

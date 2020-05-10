@@ -8,19 +8,22 @@ class WantList extends StatefulWidget {
 }
 
 class _WantListState extends State<WantList> {
-  ListData data = ListData();
-  final List<int> colorCodes = <int>[600, 500, 100, 50];
   @override
   Widget build(BuildContext context) {
-    return ListView.builder(
-        padding: const EdgeInsets.all(8),
-        itemCount: data.listCount,
-        itemBuilder: (BuildContext context, int index) {
-          return Container(
-            height: 50, //リストの要素の高さ
-            color: Colors.amber[colorCodes[index]],
-            child: Center(child: Text(data.wantList[index])),
-          );
-        });
+    return Consumer<ListData>(
+      builder: (context, listdata, index) {
+        return ListView.builder(
+          padding: const EdgeInsets.all(8),
+          itemCount: Provider.of<ListData>(context).listCount,
+          itemBuilder: (context, index) {
+            final task = listdata.wantList[index];
+            return Container(
+              height: 50, //リストの要素の高さ
+              child: Center(child: Text(task)),
+            );
+          },
+        );
+      },
+    );
   }
 }
