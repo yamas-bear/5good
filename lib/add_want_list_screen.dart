@@ -40,9 +40,9 @@ class AddWantListsScreen extends StatelessWidget {
                 child: Text('add'),
                 color: Colors.lightGreenAccent,
                 onPressed: () {
-//                  Provider.of<ListData>(context, listen: false)
-//                      .addTask(newTaskTitle);
-//                  Navigator.pop(context);
+                  Provider.of<ListData>(context, listen: false)
+                      .addTask(newTaskTitle);
+                  Navigator.pop(context);
                 }),
           ],
         ),

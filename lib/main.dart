@@ -12,46 +12,52 @@ void main() => runApp(FiveGoods());
 class FiveGoods extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
-    return ChangeNotifierProvider(
+    return ChangeNotifierProvider<ListData>(
       create: (context) => ListData(),
       child: MaterialApp(
-        title: 'Flutter Demo',
-        home: SafeArea(
-          child: Scaffold(
-            backgroundColor: Colors.yellow[300],
-            body: SafeArea(
-              child: Column(
-                crossAxisAlignment: CrossAxisAlignment.center,
-                children: <Widget>[
-                  CalenderHome(),
-                  SizedBox(height: 20),
-                  Text(
-                    '今日幸せだったこと、頑張ったことを５個書いてみよう',
-                    textAlign: TextAlign.center,
-                    style: TextStyle(
-                      fontWeight: FontWeight.bold,
-                      fontSize: 15,
-                    ),
-                  ),
-                  Expanded(child: WantList()),
-                ],
+        home: FirstScreen(),
+      ),
+    );
+  }
+}
+
+class FirstScreen extends StatelessWidget {
+  @override
+  Widget build(BuildContext context) {
+    return SafeArea(
+      child: Scaffold(
+        backgroundColor: Colors.yellow[300],
+        body: SafeArea(
+          child: Column(
+            crossAxisAlignment: CrossAxisAlignment.center,
+            children: <Widget>[
+              CalenderHome(),
+              SizedBox(height: 20),
+              Text(
+                '今日幸せだったこと、頑張ったことを５個書いてみよう',
+                textAlign: TextAlign.center,
+                style: TextStyle(
+                  fontWeight: FontWeight.bold,
+                  fontSize: 15,
+                ),
               ),
-            ),
-//            bottomNavigationBar: DownBar(),
-            floatingActionButton: FloatingActionButton(
-              onPressed: () {
-                showModalBottomSheet(
-                    context: context,
-                    builder: (context) => AddWantListsScreen());
-              },
-              child: Icon(
-                Icons.add_circle,
-                color: Colors.yellow[700],
-                size: 45,
-              ),
-              backgroundColor: Colors.white,
-            ),
+              Expanded(child: WantList()),
+            ],
           ),
+        ),
+//            bottomNavigationBar: DownBar(),
+        floatingActionButton: FloatingActionButton(
+          onPressed: () {
+            showModalBottomSheet(
+                context: context,
+                builder: (BuildContext context) => AddWantListsScreen());
+          },
+          child: Icon(
+            Icons.add_circle,
+            color: Colors.yellow[700],
+            size: 45,
+          ),
+          backgroundColor: Colors.white,
         ),
       ),
     );
