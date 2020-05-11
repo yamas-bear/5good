@@ -43,6 +43,9 @@ class AddWantListsScreen extends StatelessWidget {
                 child: Icon(Icons.create),
                 color: Colors.lightGreenAccent,
                 onPressed: () {
+                  if (newTaskTitle == null) {
+                    print('nullですね');
+                  }
                   Provider.of<ListData>(context, listen: false)
                       .addTask(newTaskTitle);
                   Navigator.pop(context);

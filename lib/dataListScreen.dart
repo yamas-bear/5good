@@ -22,7 +22,7 @@ class _WantListState extends State<WantList> {
               child: Column(children: <Widget>[
                 ListTile(
 //                  title: Center(child: Text(task)),
-                  title: Center(child: Text(task)),
+                  title: Text(task.toString()),
                   onLongPress: () {
                     listdata.deleteList(task);
                   },
