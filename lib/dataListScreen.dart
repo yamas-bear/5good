@@ -22,7 +22,8 @@ class _WantListState extends State<WantList> {
               child: Column(children: <Widget>[
                 ListTile(
 //                  title: Center(child: Text(task)),
-                  title: Text(task.toString()),
+                  title: Text(
+                      task.toString()), //.toStringはエラーの処理ができたら消去したほうが良いかもしれない
                   onLongPress: () {
                     listdata.deleteList(task);
                   },
