@@ -41,9 +41,7 @@ class FirstScreen extends StatelessWidget {
                   fontSize: 15,
                 ),
               ),
-              Expanded(
-                child: WantList(),
-              ),
+              Expanded(child: WantList()),
             ],
           ),
         ),

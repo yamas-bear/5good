@@ -17,11 +17,17 @@ class _WantListState extends State<WantList> {
           itemCount: Provider.of<ListData>(context).listCount,
           itemBuilder: (context, index) {
             final task = listdata.wantList[index];
-            return ListTile(
-              title: Center(child: Text(task)),
-              onLongPress: () {
-                listdata.deleteList(task);
-              },
+            return Card(
+              clipBehavior: Clip.hardEdge,
+              child: Column(children: <Widget>[
+                ListTile(
+//                  title: Center(child: Text(task)),
+                  title: Center(child: Text(task)),
+                  onLongPress: () {
+                    listdata.deleteList(task);
+                  },
+                ),
+              ]),
             );
           },
         );
