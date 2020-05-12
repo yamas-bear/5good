@@ -2,12 +2,7 @@ import 'package:flutter/material.dart';
 import 'dataList.dart';
 import 'package:provider/provider.dart';
 
-class WantList extends StatefulWidget {
-  @override
-  _WantListState createState() => _WantListState();
-}
-
-class _WantListState extends State<WantList> {
+class WantList extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Consumer<ListData>(

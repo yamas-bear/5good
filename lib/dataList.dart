@@ -4,7 +4,6 @@ import 'package:provider/provider.dart';
 
 class ListData extends ChangeNotifier {
   List<String> wantList = [];
-
   int get listCount {
     return wantList.length;
   }

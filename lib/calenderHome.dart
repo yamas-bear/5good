@@ -1,12 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:calendar_strip/calendar_strip.dart';
+import 'package:provider/provider.dart';
 
-class CalenderHome extends StatefulWidget {
-  @override
-  _CalenderHomeState createState() => _CalenderHomeState();
-}
-
-class _CalenderHomeState extends State<CalenderHome> {
+class CalenderHome extends StatelessWidget {
   //現在の日にちから2日前.色が濃くなる日付の選択
 //  DateTime startDate = DateTime.now().subtract(Duration(days: 2));
 

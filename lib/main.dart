@@ -34,7 +34,7 @@ class FirstScreen extends StatelessWidget {
               CalenderHome(),
               SizedBox(height: 20),
               Text(
-                '今日幸せだったこと、頑張ったことを５個書いてみよう',
+                '今日幸せだったこと、頑張ったことを書いてみよう!!',
                 textAlign: TextAlign.center,
                 style: TextStyle(
                   fontWeight: FontWeight.bold,
