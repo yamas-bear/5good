@@ -3,12 +3,7 @@ import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
 
 class ListData extends ChangeNotifier {
-  List<String> wantList = [
-    'sample1',
-    'sample2',
-    'sample3',
-    'sample4',
-  ];
+  List<String> wantList = [];
 
   int get listCount {
     return wantList.length;

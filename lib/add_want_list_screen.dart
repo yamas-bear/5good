@@ -18,20 +18,22 @@ class AddWantListsScreen extends StatelessWidget {
           ),
         ),
         child: Column(
-          crossAxisAlignment: CrossAxisAlignment.stretch,
+          crossAxisAlignment: CrossAxisAlignment.center,
           children: <Widget>[
-            Text(
-              '今日もお疲れさま',
-              textAlign: TextAlign.center,
-              style: TextStyle(
-                fontSize: 30,
-                color: Colors.yellow[700],
-              ),
-            ),
+//            Text(
+//              '今日もお疲れさま',
+//              textAlign: TextAlign.center,
+//              style: TextStyle(
+//                fontSize: 30,
+//                color: Colors.yellow[800],
+//              ),
+//            ),
             SizedBox(
-              height: 20,
+              height: 60,
             ),
             TextField(
+              cursorColor: Colors.yellow[700],
+              cursorWidth: 5,
               autofocus: true,
               textAlign: TextAlign.center,
               onChanged: (newText) {
@@ -40,16 +42,19 @@ class AddWantListsScreen extends StatelessWidget {
               },
             ),
             FlatButton(
+                visualDensity: VisualDensity(horizontal: 4, vertical: 4),
                 child: Icon(Icons.create),
                 color: Colors.lightGreenAccent,
                 onPressed: () {
                   //ToDo nullの時の処理をここにかく
                   if (newTaskTitle == null) {
-                    print('nullですね');
+                    print('Nullです');
+                    Navigator.pop(context);
+                  } else {
+                    Provider.of<ListData>(context, listen: false)
+                        .addTask(newTaskTitle);
+                    Navigator.pop(context);
                   }
-                  Provider.of<ListData>(context, listen: false)
-                      .addTask(newTaskTitle);
-                  Navigator.pop(context);
                 }),
           ],
         ),
