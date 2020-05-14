@@ -3,16 +3,16 @@ import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
 
 class ListData extends ChangeNotifier {
-//  List<String> wantList = [];
-//  int get listCount {
-//    return wantList.length;
-//  }
+  List<String> wantList = [];
+  int get listCount {
+    return wantList.length;
+  }
 
-  Map<DateTime, List> wantList = {
-    DateTime.now().subtract(Duration(days: 1)): [],
-    DateTime.now(): [],
-    DateTime.now().add(Duration(days: 1)): []
-  };
+//  Map<DateTime, List> wantList = {
+//    DateTime.now().subtract(Duration(days: 1)): [],
+//    DateTime.now(): [],
+//    DateTime.now().add(Duration(days: 1)): []
+//  };
 
   //todo firestoreに保存しているデータに追加できるようにする
   void addTask(String newTaskTitle) {

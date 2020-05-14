@@ -1,0 +1,40 @@
+{
+  "project_info": {
+    "project_number": "629499228497",
+    "firebase_url": "https://goods-84bed.firebaseio.com",
+    "project_id": "goods-84bed",
+    "storage_bucket": "goods-84bed.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:629499228497:android:f9d75c9b00dc414b45a370",
+        "android_client_info": {
+          "package_name": "yamas.fivegoodapp"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "629499228497-hqu580lg9tgfk3kkedmi03o7tfn1hi7a.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyA9AkobpXZdvCqZ5CzXJNPA1P5nviW-N0M"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "629499228497-hqu580lg9tgfk3kkedmi03o7tfn1hi7a.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
