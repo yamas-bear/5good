@@ -1,7 +1,6 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'calenderHome.dart';
-import 'DownBar.dart';
 import 'dataListScreen.dart';
 import 'package:provider/provider.dart';
 import 'dataList.dart';
@@ -12,7 +11,7 @@ void main() => runApp(FiveGoods());
 class FiveGoods extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
-    return ChangeNotifierProvider<ListData>(
+    return ChangeNotifierProvider(
       create: (context) => ListData(),
       child: MaterialApp(
         home: FirstScreen(),

@@ -6,6 +6,7 @@ class AddWantListsScreen extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     String newTaskTitle;
+    ListData listData = ListData();
 
     return Container(
       color: Color(0xff757575),
@@ -53,6 +54,8 @@ class AddWantListsScreen extends StatelessWidget {
                   } else {
                     Provider.of<ListData>(context, listen: false)
                         .addTask(newTaskTitle);
+                    Provider.of<ListData>(context, listen: false)
+                        .addTaskTOFireStore(newTaskTitle);
                     Navigator.pop(context);
                   }
                 }),

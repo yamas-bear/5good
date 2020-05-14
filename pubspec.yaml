@@ -13,6 +13,7 @@ dependencies:
   cupertino_icons: ^0.1.2
   calendar_strip: ^1.0.6
   provider: ^4.1.0
+  cloud_firestore: ^0.13.5
   scrollable_positioned_list: ^0.1.5
 dev_dependencies:
   flutter_test:

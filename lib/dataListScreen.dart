@@ -5,13 +5,13 @@ import 'package:provider/provider.dart';
 class WantList extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
-    return Consumer<ListData>(
+    return Consumer(
       builder: (context, listdata, index) {
         return ListView.builder(
           padding: const EdgeInsets.all(8),
-          itemCount: Provider.of<ListData>(context).listCount,
+          itemCount: Provider.of<ListData>(context).wantList.length,
           itemBuilder: (context, index) {
-            final task = listdata.wantList[index];
+            final task = listdata.wantList[DateTime.now()][index];
             return Card(
               clipBehavior: Clip.hardEdge,
               child: Column(children: <Widget>[
@@ -20,7 +20,7 @@ class WantList extends StatelessWidget {
                   title: Text(
                       task.toString()), //.toStringはエラーの処理ができたら消去したほうが良いかもしれない
                   onLongPress: () {
-                    listdata.deleteList(task);
+//                    listdata.deleteList(task);
                   },
                 ),
               ]),
