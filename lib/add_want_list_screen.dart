@@ -6,7 +6,6 @@ class AddWantListsScreen extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     String newTaskTitle;
-    ListData listData = ListData();
 
     return Container(
       color: Color(0xff757575),

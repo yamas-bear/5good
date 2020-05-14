@@ -2,25 +2,27 @@ import 'package:flutter/material.dart';
 import 'package:calendar_strip/calendar_strip.dart';
 import 'package:provider/provider.dart';
 
-class CalenderHome extends StatelessWidget {
+class CalenderHome extends StatefulWidget {
   //現在の日にちから2日前.色が濃くなる日付の選択
 //  DateTime startDate = DateTime.now().subtract(Duration(days: 2));
 
+  @override
+  _CalenderHomeState createState() => _CalenderHomeState();
+}
+
+class _CalenderHomeState extends State<CalenderHome> {
   DateTime startDate = DateTime.now().subtract(Duration(days: 1));
 
   DateTime endDate = DateTime.now().add(Duration(days: 1));
 
-//  DateTime selectedDate = DateTime.now().add(Duration(days: 100));
   DateTime selectedDate = DateTime.now();
 
   List<DateTime> markedDates = [];
 
-  //onselectの中で日にちの情報とやりたいことリストを紐づける
   onSelect(data) {
     print("Selected Date -> $data");
   }
 
-  //何年何月何日なのかのフォントや色について指定する
   _monthNameWidget(monthName) {
     return Container(
       child: Text(monthName,
