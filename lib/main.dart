@@ -6,7 +6,12 @@ import 'package:provider/provider.dart';
 import 'dataList.dart';
 import 'add_want_list_screen.dart';
 
-void main() => runApp(FiveGoods());
+void main() {
+  WidgetsFlutterBinding.ensureInitialized();
+  runApp(
+    FiveGoods(),
+  );
+}
 
 class FiveGoods extends StatelessWidget {
   @override

@@ -45,7 +45,7 @@ class AddWantListsScreen extends StatelessWidget {
                 visualDensity: VisualDensity(horizontal: 4, vertical: 4),
                 child: Icon(Icons.create),
                 color: Colors.lightGreenAccent,
-                onPressed: () {
+                onPressed: () async {
                   //ToDo nullの時の処理をここにかく
                   if (newTaskTitle == null) {
                     print('Nullです');
