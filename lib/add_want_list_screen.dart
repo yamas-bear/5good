@@ -51,7 +51,7 @@ class AddWantListsScreen extends StatelessWidget {
                     print('Nullです');
                     Navigator.pop(context);
                   } else {
-                    await Provider.of<ListData>(context, listen: false)
+                    Provider.of<ListData>(context, listen: false)
                         .addTask(newTaskTitle);
                     Provider.of<ListData>(context, listen: false)
                         .addTaskTOFireStore(newTaskTitle);
