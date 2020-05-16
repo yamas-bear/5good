@@ -3,6 +3,7 @@ import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
 import 'package:cloud_firestore/cloud_firestore.dart';
 
+//changeNotifierを継承すると変更可能なデータを渡せる
 class ListData extends ChangeNotifier {
   //FireStoreのインスタンスを初期化
   Firestore db = Firestore.instance;
@@ -21,10 +22,14 @@ class ListData extends ChangeNotifier {
   void addTaskTOFireStore(String newTaskTitle) {
     db.collection('users').document('list').setData({'lists': newTaskTitle});
 //    db.collection("users").document("list").setData({'lists':newTaskTitle});
+
+    //値が変更されたことを知らせる
+    //UIを再構築
     notifyListeners();
   }
 
   List<String> wantList = [];
+
   int get listCount {
     return wantList.length;
   }
@@ -32,7 +37,9 @@ class ListData extends ChangeNotifier {
   //todo firestoreに保存しているデータに追加できるようにする
   void addTask(String newTaskTitle) {
     wantList.add(newTaskTitle);
-    notifyListeners(); //完了したら通知を送ってデータの更新を行う必要がある。
+    //値が変更されたことを知らせる
+    //UIを再構築
+    notifyListeners();
   }
 
   void deleteList(String task) {

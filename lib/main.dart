@@ -6,13 +6,21 @@ import 'package:provider/provider.dart';
 import 'dataList.dart';
 import 'add_want_list_screen.dart';
 
-void main() => runApp(FiveGoods());
+void main() {
+  WidgetsFlutterBinding.ensureInitialized();
+  runApp(
+    FiveGoods(),
+  );
+}
 
 class FiveGoods extends StatelessWidget {
+  //providerによって継承したいデータ
+  final listData = ListData();
+
   @override
   Widget build(BuildContext context) {
-    return ChangeNotifierProvider(
-      create: (context) => ListData(),
+    return ChangeNotifierProvider<ListData>.value(
+      value: listData,
       child: MaterialApp(
         home: FirstScreen(),
       ),

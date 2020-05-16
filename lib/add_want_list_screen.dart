@@ -45,13 +45,13 @@ class AddWantListsScreen extends StatelessWidget {
                 visualDensity: VisualDensity(horizontal: 4, vertical: 4),
                 child: Icon(Icons.create),
                 color: Colors.lightGreenAccent,
-                onPressed: () {
+                onPressed: () async {
                   //ToDo nullの時の処理をここにかく
                   if (newTaskTitle == null) {
                     print('Nullです');
                     Navigator.pop(context);
                   } else {
-                    Provider.of<ListData>(context, listen: false)
+                    await Provider.of<ListData>(context, listen: false)
                         .addTask(newTaskTitle);
                     Provider.of<ListData>(context, listen: false)
                         .addTaskTOFireStore(newTaskTitle);
