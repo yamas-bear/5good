@@ -12,6 +12,7 @@ class FiveGoods extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return ChangeNotifierProvider(
+      //ListData()のデータを継承する
       create: (context) => ListData(),
       child: MaterialApp(
         home: FirstScreen(),

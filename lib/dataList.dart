@@ -3,6 +3,7 @@ import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
 import 'package:cloud_firestore/cloud_firestore.dart';
 
+//changenotifierを継承することで状態管理を行えるようになっている
 class ListData extends ChangeNotifier {
   //FireStoreのインスタンスを初期化
   Firestore db = Firestore.instance;
@@ -19,7 +20,12 @@ class ListData extends ChangeNotifier {
 //  }
 
   void addTaskTOFireStore(String newTaskTitle) {
-    db.collection('users').document('list').setData({'lists': newTaskTitle});
+    final date = DateTime.now();
+    db
+        .collection('users')
+        .document('UserID')
+        .collection('list')
+        .add({'lists': newTaskTitle, 'createdAt': date});
 //    db.collection("users").document("list").setData({'lists':newTaskTitle});
     notifyListeners();
   }
