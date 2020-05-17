@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:calendar_strip/calendar_strip.dart';
 import 'package:provider/provider.dart';
+import 'dataList.dart';
 
 class CalenderHome extends StatefulWidget {
   //現在の日にちから2日前.色が濃くなる日付の選択
@@ -18,6 +19,8 @@ class _CalenderHomeState extends State<CalenderHome> {
   DateTime selectedDate = DateTime.now();
 
   List<DateTime> markedDates = [];
+
+  ListData listData = ListData();
 
   onSelect(data) {
     print("Selected Date -> $data");
