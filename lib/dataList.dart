@@ -33,7 +33,8 @@ class ListData extends ChangeNotifier {
 //    db.collection("users").document("list").setData({'lists':newTaskTitle});
 //    await wantList.add(getDocument().toString());
     QuerySnapshot snapshot = await getDocument();
-    wantList = snapshot.documents[0].data;
+    //QuerySnapshot型をstring型に変更する
+    wantList = [snapshot.documentChanges.toString()];
 
     //値が変更されたことを知らせる
     //UIを再構築
@@ -43,6 +44,7 @@ class ListData extends ChangeNotifier {
   List<String> wantList = [];
 
   Future getDocument() async {
+    //複数のデータを取得する
     QuerySnapshot snapshot = await db
         .collection('users')
         .document('UserID')
