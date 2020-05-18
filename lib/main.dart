@@ -7,7 +7,6 @@ import 'dataList.dart';
 import 'add_want_list_screen.dart';
 
 void main() {
-  WidgetsFlutterBinding.ensureInitialized();
   runApp(
     FiveGoods(),
   );
