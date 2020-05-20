@@ -55,6 +55,7 @@ class AddWantListsScreen extends StatelessWidget {
 //                        .addTask(newTaskTitle);
                     Provider.of<ListData>(context, listen: false)
                         .addTaskTOFireStore(newTaskTitle);
+
                     Navigator.pop(context);
                   }
                 }),

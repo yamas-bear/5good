@@ -23,35 +23,49 @@ class ListData extends ChangeNotifier {
 //    notifyListeners(); //完了したら通知を送ってデータの更新を行う必要がある。
 //  }
 
-  Future addTaskTOFireStore(String newTaskTitle) async {
-    var date = DateTime;
-    db
+  void addTaskTOFireStore(String newTaskTitle) async {
+    var date = DateTime.now();
+    await db
         .collection('users')
         .document('UserID')
         .collection('list')
         .add({'lists': newTaskTitle, 'createdAt': date});
 //    db.collection("users").document("list").setData({'lists':newTaskTitle});
 //    await wantList.add(getDocument().toString());
-    QuerySnapshot snapshot = await getDocument();
-    //QuerySnapshot型をstring型に変更する
-    wantList = [snapshot.documentChanges.toString()];
 
     //値が変更されたことを知らせる
     //UIを再構築
     notifyListeners();
   }
 
+//
   List<String> wantList = [];
+//  QuerySnapshot snapshot = await getDocument();
+//  //QuerySnapshot型をstring型に変更する
+//  wantList = [snapshot[''].documentChanges.toString()];
 
-  Future getDocument() async {
-    //複数のデータを取得する
-    QuerySnapshot snapshot = await db
+//  getDocument() async {
+////    複数のデータを取得する
+//    QuerySnapshot snapshot = await db
+//        .collection('users')
+//        .document('UserID')
+//        .collection('list')
+////        .where("createdAt", isEqualTo: DateTime.may)
+//        .getDocuments();
+//
+////    List<DocumentSnapshot> documents = snapshot.documents;
+////    return snapshot.documents[0]['lists'].data;
+//    return snapshot;
+//  }
+  getDocument() async {
+    QuerySnapshot docSnapshot = await db
         .collection('users')
         .document('UserID')
         .collection('list')
-        .where("createdAt", isEqualTo: DateTime.now())
         .getDocuments();
-    return snapshot;
+    wantList = [docSnapshot.toString()];
+    print(wantList);
+    return wantList;
   }
 
   int get listCount {

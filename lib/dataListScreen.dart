@@ -11,12 +11,12 @@ class WantList extends StatelessWidget {
         itemCount: Provider.of<ListData>(context).wantList.length,
         itemBuilder: (context, index) {
 //            final task = listdata.wantList[DateTime.now()][index];
-          final task = listdata.wantList[index];
+          var task = listdata.getDocument();
           return Card(
             clipBehavior: Clip.hardEdge,
             child: Column(children: <Widget>[
               ListTile(
-                title: Center(child: Text(task)),
+                title: Center(child: Text(task.toString())),
                 //.toStringはエラーの処理ができたら消去したほうが良いかもしれない
                 onLongPress: () {
 //                    listdata.deleteList(task);
