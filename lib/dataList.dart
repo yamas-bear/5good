@@ -57,16 +57,16 @@ class ListData extends ChangeNotifier {
 ////    return snapshot.documents[0]['lists'].data;
 //    return snapshot;
 //  }
-  getDocument() async {
-    QuerySnapshot docSnapshot = await db
-        .collection('users')
-        .document('UserID')
-        .collection('list')
-        .getDocuments();
-    wantList = [docSnapshot.toString()];
-    print(wantList);
-    return wantList;
-  }
+//  getDocument() {
+//    var docSnapshot = db
+//        .collection("users")
+//        .document("UserID")
+//        .collection("list")
+//        .document("UwwQtY2I2TtSmxL3kUkf")
+//        .get();
+//
+//    return docSnapshot;
+//  }
 
   int get listCount {
     return wantList.length;
@@ -84,4 +84,19 @@ class ListData extends ChangeNotifier {
     wantList.remove(task);
     notifyListeners();
   }
+
+//  getDocument(BuildContext context) {
+//    return StreamBuilder<QuerySnapshot>(
+//      stream: db
+//          .collection("users")
+//          .document("UserID")
+//          .collection("list")
+//          .document("UwwQtY2I2TtSmxL3kUkf")
+//          .collection('lists')
+//          .snapshots(),
+//      builder: (context, snapshot) {
+//        if (!snapshot.hasData) return LinearProgressIndicator();
+//      },
+//    );
+//  }
 }
