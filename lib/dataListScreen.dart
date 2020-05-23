@@ -38,6 +38,9 @@ class WantList extends StatelessWidget {
           .collection("users")
           .document("UserID")
           .collection("list")
+          .where(
+            "createdAt",
+          )
           .snapshots(),
       builder: (context, snapshot) {
         if (!snapshot.hasData) return LinearProgressIndicator();
