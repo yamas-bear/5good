@@ -24,7 +24,8 @@ class ListData extends ChangeNotifier {
 //  }
 
   void addTaskTOFireStore(String newTaskTitle) async {
-    var date = DateTime.now();
+    var date =
+        (DateTime.now().year - DateTime.now().month - DateTime.now().day);
     await db
         .collection('users')
         .document('UserID')

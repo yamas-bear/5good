@@ -40,6 +40,8 @@ class WantList extends StatelessWidget {
           .collection("list")
           .where(
             "createdAt",
+            isEqualTo:
+                DateTime.now().year - DateTime.now().month - DateTime.now().day,
           )
           .snapshots(),
       builder: (context, snapshot) {
