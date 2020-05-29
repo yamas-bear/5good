@@ -25,45 +25,62 @@ class FiveGoods extends StatelessWidget {
   }
 }
 
+//  Widget build(BuildContext context) {
+//    return MultiProvider(
+//      providers: [
+//        Provider<ListData>.value(value: ListData()),
+//        Provider<CalenderHome>.value(value: CalenderHome()),
+//      ],
+//      child: MaterialApp(
+//        home: FirstScreen(),
+//      ),
+//    );
+//  }
+//}
+
 class FirstScreen extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
-    return SafeArea(
-      child: Scaffold(
-        backgroundColor: Colors.yellow[300],
-        body: SafeArea(
-          child: Column(
-            crossAxisAlignment: CrossAxisAlignment.center,
-            children: <Widget>[
-              CalenderHome(),
-              SizedBox(height: 20),
-              Text(
-                '今日幸せだったこと、頑張ったことを書いてみよう!!',
-                textAlign: TextAlign.center,
-                style: TextStyle(
-                  fontWeight: FontWeight.bold,
-                  fontSize: 15,
+    return StreamBuilder<CalenderHome>(
+        stream: null,
+        builder: (context, snapshot) {
+          return SafeArea(
+            child: Scaffold(
+              backgroundColor: Colors.yellow[300],
+              body: SafeArea(
+                child: Column(
+                  crossAxisAlignment: CrossAxisAlignment.center,
+                  children: <Widget>[
+                    CalenderHome(),
+                    SizedBox(height: 20),
+                    Text(
+                      '今日幸せだったこと、頑張ったことを書いてみよう!!',
+                      textAlign: TextAlign.center,
+                      style: TextStyle(
+                        fontWeight: FontWeight.bold,
+                        fontSize: 15,
+                      ),
+                    ),
+                    Expanded(child: WantList()),
+                  ],
                 ),
               ),
-              Expanded(child: WantList()),
-            ],
-          ),
-        ),
 //            bottomNavigationBar: DownBar(),
-        floatingActionButton: FloatingActionButton(
-          onPressed: () {
-            showModalBottomSheet(
-                context: context,
-                builder: (BuildContext context) => AddWantListsScreen());
-          },
-          child: Icon(
-            Icons.add_circle,
-            color: Colors.yellow[700],
-            size: 45,
-          ),
-          backgroundColor: Colors.white,
-        ),
-      ),
-    );
+              floatingActionButton: FloatingActionButton(
+                onPressed: () {
+                  showModalBottomSheet(
+                      context: context,
+                      builder: (BuildContext context) => AddWantListsScreen());
+                },
+                child: Icon(
+                  Icons.add_circle,
+                  color: Colors.yellow[700],
+                  size: 45,
+                ),
+                backgroundColor: Colors.white,
+              ),
+            ),
+          );
+        });
   }
 }

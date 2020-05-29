@@ -1,3 +1,4 @@
+import 'package:fivegoodapp/dataListScreen.dart';
 import 'package:flutter/material.dart';
 import 'package:calendar_strip/calendar_strip.dart';
 import 'package:provider/provider.dart';
@@ -27,6 +28,11 @@ class _CalenderHomeState extends State<CalenderHome> {
     print(data.year);
     print(data.month);
     print(data.day);
+    setState(() {
+      WantList(date: data);
+    });
+
+//    Navigator.of(data);
   }
 
   _monthNameWidget(monthName) {

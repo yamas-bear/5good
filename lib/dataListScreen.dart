@@ -1,9 +1,13 @@
 import 'package:cloud_firestore/cloud_firestore.dart';
+import 'package:fivegoodapp/calenderHome.dart';
 import 'package:flutter/material.dart';
 import 'dataList.dart';
 import 'package:provider/provider.dart';
 
 class WantList extends StatelessWidget {
+  DateTime date;
+  WantList({this.date});
+
   @override
   Widget build(BuildContext context) {
     return StreamBuilder<QuerySnapshot>(
@@ -14,7 +18,9 @@ class WantList extends StatelessWidget {
           .where(
             "createdAt",
             isEqualTo:
-                DateTime.now().year - DateTime.now().month - DateTime.now().day,
+//                DateTime.now().year - DateTime.now().month - DateTime.now().day,
+//                '$year - $month - $day',
+                date.year - date.month - date.day,
           )
           .snapshots(),
       builder: (context, snapshot) {
