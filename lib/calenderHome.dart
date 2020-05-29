@@ -23,7 +23,10 @@ class _CalenderHomeState extends State<CalenderHome> {
   ListData listData = ListData();
 
   onSelect(data) {
-    print("Selected Date -> $data");
+//    print(data.year() - data.monts() - data.day());
+    print(data.year);
+    print(data.month);
+    print(data.day);
   }
 
   _monthNameWidget(monthName) {
